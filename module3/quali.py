@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np  
 import matplotlib.pyplot as plt
+import io
 
 st.title(" :red[Anlayse des données qualitative]")
 #st.subheader(":blue[Auteur] :blue[M. Beni Nzimba]")
@@ -37,11 +38,20 @@ else:
 #df_d.info()
 #df_d.shape[0]
 
-#st.dataframe(df.head())
+# buffer = io.StringIO()
+# df.info(buf=buffer)
+# s = buffer.getvalue()
+# st.text(s)
+# with open("df_info.txt", "w", 
+#         encoding="utf-8") as f:
+#         f.write(s) 
+
+# #st.write(df.info())
 st.write(
     f"le tableau 1, répresente les données d'une manière succintes, le tableau nous renseigne que"
-    f"nous avons les individus, les variables âge, sexe et commune. Au total :blue[{df.shape[0]} individus.]"
+    f" nous avons les individus, au total :blue[{df.shape[0]} individus.] et les variables :blue[{df.shape[0]} âge, sexe et commune.]"
     )
+
 
 st.subheader(":blue[Tableau 2 : Répartition des individus selon le sexe.]")
 
