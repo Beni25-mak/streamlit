@@ -16,7 +16,7 @@ st.subheader(":blue[Tableau 1: présentation des données]")
 
 #### partie : Python
 
-df = pd.read_excel("C:/Users/User/Documents/Travail_beni_22042025/27 mai 2025/streamlit/module2/data/try.xlsx")
+df = pd.read_excel("try.xlsx")
 df_d = pd.DataFrame(df)
 df_d.head()
 df_d.info()
