@@ -16,16 +16,28 @@ st.subheader(":blue[Tableau 1: présentation des données]")
 
 #### partie : Python
 
-excel_file = "try.xlsx"
+# Upload du fichier
+uploaded_file = st.file_uploader("Choisissez un fichier Excel", type=["xlsx", "xls"])
 
-df = pd.read_excel(excel_file)
+if uploaded_file is not None:
+    try:
+        df = pd.read_excel(uploaded_file)
+        st.write(df)
+    except Exception as e:
+        st.error(f"Erreur lors de la lecture du fichier : {e}")
+else:
+    st.warning("Veuillez uploader un fichier Excel.")
+
+#excel_file = "try.xlsx"
+
+#df = pd.read_excel(excel_file)
 
 #df_d = pd.DataFrame(df)
 #df_d.head()
 #df_d.info()
 #df_d.shape[0]
 
-st.dataframe(df.head())
+#st.dataframe(df.head())
 st.write(
     f"le tableau 1, répresente les données d'une manière succintes, le tableau nous renseigne que"
     f"nous avons les individus, les variables âge, sexe et commune. Au total :blue[{df.shape[0]} individus.]"
