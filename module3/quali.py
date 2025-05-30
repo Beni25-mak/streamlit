@@ -18,17 +18,17 @@ st.subheader(":blue[Tableau 1: présentation des données]")
 
 df = pd.read_excel("try.xlsx")
 df_d = pd.DataFrame(df)
-df_d.head()
-df_d.info()
+#df_d.head()
+#df_d.info()
 #df_d.shape[0]
 
-st.dataframe(df.head())
+st.dataframe(df_d.head())
 st.write(
     f"le tableau 1, répresente les données d'une manière succintes, le tableau nous renseigne que"
     f"nous avons les individus, les variables âge, sexe et commune. Au total :blue[{df_d.shape[0]} individus.]"
     )
 
-st.subheader(":blue[Tableau 2 : Répartition des individus selon le sexe]")
+st.subheader(":blue[Tableau 2 : Répartition des individus selon le sexe.]")
 
 effectif = df_d['sexe'].value_counts()
 pourcentage = effectif/len(df_d)*100
