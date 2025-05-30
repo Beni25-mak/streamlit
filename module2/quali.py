@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np  
 import matplotlib.pyplot as plt
-
+matplotlib
 st.title(" :red[Anlayse des données qualitative]")
 #st.subheader(":blue[Auteur] :blue[M. Beni Nzimba]")
 
@@ -16,7 +16,7 @@ st.subheader(":blue[Tableau 1: présentation des données]")
 
 #### partie : Python
 
-df = pd.read_excel("data/try.xlsx")
+df = pd.read_excel("../data/try.xlsx")
 df_d = pd.DataFrame(df)
 df_d.head()
 df_d.info()
