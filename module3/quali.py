@@ -16,22 +16,25 @@ st.subheader(":blue[Tableau 1: présentation des données]")
 
 #### partie : Python
 
-df = pd.read_excel("try.xlsx")
-df_d = pd.DataFrame(df)
+excel_file = "try.xlsx"
+
+df = pd.read_excel(excel_file)
+
+#df_d = pd.DataFrame(df)
 #df_d.head()
 #df_d.info()
 #df_d.shape[0]
 
-st.dataframe(df_d.head())
+st.dataframe(df.head())
 st.write(
     f"le tableau 1, répresente les données d'une manière succintes, le tableau nous renseigne que"
-    f"nous avons les individus, les variables âge, sexe et commune. Au total :blue[{df_d.shape[0]} individus.]"
+    f"nous avons les individus, les variables âge, sexe et commune. Au total :blue[{df.shape[0]} individus.]"
     )
 
 st.subheader(":blue[Tableau 2 : Répartition des individus selon le sexe.]")
 
-effectif = df_d['sexe'].value_counts()
-pourcentage = effectif/len(df_d)*100
+effectif = df['sexe'].value_counts()
+pourcentage = effectif/len(df)*100
 rep_sex = pd.DataFrame({
     'Effectif': effectif,
     'Pourcentage(%)':pourcentage.round(1)
@@ -46,8 +49,8 @@ st.write(
 
 st.subheader(":blue[Tableau 3 : Répartition des individus selon la commune de résidence]")
 
-effectif0 = df_d['commune'].value_counts()
-pourcentage0 = effectif0/len(df_d)*100
+effectif0 = df['commune'].value_counts()
+pourcentage0 = effectif0/len(df)*100
 rep_com = pd.DataFrame({
     'Effectif0': effectif0,
     'Pourcentage(%)':pourcentage0.round(1)
